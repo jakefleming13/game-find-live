@@ -1,7 +1,8 @@
 
 import { Game } from '../hooks/usegames'
-import { Card, CardBody, Heading, Image, Text } from '@chakra-ui/react';
+import { Card, CardBody, HStack, Heading, Image, Text } from '@chakra-ui/react';
 import PlaformIconList from './PlaformIconList';
+import CriticScore from './CriticScore';
 
 interface Props{
     game: Game;
@@ -14,8 +15,11 @@ const GameCard = ({game}: Props) => {
         <CardBody>
             <Heading fontSize='2xl'>{game.name}</Heading>
 
-            {/* This mapping is constructing an array of platform objects */}
-            <PlaformIconList platforms={game.parent_platforms.map(p => p.platform)}/>
+            <HStack justifyContent='space-between'>
+                {/* This mapping is constructing an array of platform objects */}
+                <PlaformIconList platforms={game.parent_platforms.map(p => p.platform)}/>
+                <CriticScore score={game.metacritic}/>
+            </HStack>
         </CardBody>
     </Card>
   )
