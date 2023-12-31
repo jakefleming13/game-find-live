@@ -1,8 +1,8 @@
-
 import { Game } from '../hooks/usegames'
 import { Card, CardBody, HStack, Heading, Image, Text } from '@chakra-ui/react';
 import PlaformIconList from './PlaformIconList';
 import CriticScore from './CriticScore';
+import getCroppedImageurl from '../services/image-url';
 
 interface Props{
     game: Game;
@@ -11,7 +11,7 @@ interface Props{
 const GameCard = ({game}: Props) => {
   return (
     <Card borderRadius={10} overflow='hidden'>
-        <Image src={game.background_image}/>
+        <Image src={getCroppedImageurl(game.background_image)}/>
         <CardBody>
             <Heading fontSize='2xl'>{game.name}</Heading>
 
