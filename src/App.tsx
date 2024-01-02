@@ -10,7 +10,10 @@ function App() {
       templateAreas={{
         base: `"nav" "main"`, //Mobile devices
         lg: `"nav nav" "aside main"` //Devices larger than 1024px
-
+      }}
+      templateColumns={{
+        base: '1fr',
+        lg: '200px 1fr'
       }}
     >
       <GridItem area="nav">
@@ -19,7 +22,7 @@ function App() {
 
       {/* Wrap Aside in Show component to only show on large enough screens */}
       <Show above="lg">
-        <GridItem area="aside">
+        <GridItem area="aside" paddingX={5}>
           <GenreList/>
         </GridItem>
       </Show>
