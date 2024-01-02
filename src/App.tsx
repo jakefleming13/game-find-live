@@ -29,7 +29,7 @@ function App() {
       {/* Wrap Aside in Show component to only show on large enough screens */}
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
-          <GenreList onSelectGenre={(genre) => setSelectedGenres(genre)}/>
+          <GenreList onSelectGenre={(genre) => setSelectedGenres(genre)} selectedGenre={selectedGenres}/>
         </GridItem>
       </Show>
 
