@@ -1,4 +1,4 @@
-import { CanceledError } from "axios";
+import { AxiosRequestConfig, CanceledError } from "axios";
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 
@@ -7,7 +7,7 @@ interface FetchResponse<T> {
     results: T[];
 }
 
-const useData = <T>(endpoint: string) => {
+const useData = <T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?: any[]) => {
     // Need a state variable for storing our game objects, and for error messages
   const [data, setData] = useState<T[]>([]);
   const [error, setError] = useState("");
@@ -23,7 +23,7 @@ const useData = <T>(endpoint: string) => {
 
     //Call '.get' with the '/games' endpoint & signal object while providing a generic type argument of our interface
     apiClient
-      .get<FetchResponse<T>>(endpoint, { signal: controller.signal })
+      .get<FetchResponse<T>>(endpoint, { signal: controller.signal, ...requestConfig })
 
       //'.then' needs interfaces to allow us to call 'setGames' with the proper structure
       .then((res) => {
@@ -39,7 +39,7 @@ const useData = <T>(endpoint: string) => {
     return () => controller.abort();
     
       //include an array of dependencies, without this we constantly send requests to our backend
-  }, []);
+  }, deps ? [...deps]: []);
 
   return {data, error, isLoading};
 };
