@@ -1,8 +1,9 @@
+import noImage from '../assets/no-image-placeholder-6f3882e0.webp';
 
 //Function that optimizes the image's size that are being rendered
 const getCroppedImageurl = (url: string) =>
 {
-    if (!url) return '';
+    if (!url) return noImage;
     
     const target = 'media/';
 
