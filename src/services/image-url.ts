@@ -2,6 +2,8 @@
 //Function that optimizes the image's size that are being rendered
 const getCroppedImageurl = (url: string) =>
 {
+    if (!url) return '';
+    
     const target = 'media/';
 
     const index = url.indexOf(target) + target.length;
