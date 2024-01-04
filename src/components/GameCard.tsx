@@ -1,4 +1,4 @@
-import { Game } from '../hooks/usegames'
+import { Game } from '../hooks/useGames'
 import { Card, CardBody, HStack, Heading, Image, Text } from '@chakra-ui/react';
 import PlaformIconList from './PlaformIconList';
 import CriticScore from './CriticScore';
