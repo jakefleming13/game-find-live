@@ -1,4 +1,4 @@
-import useData from "./useData";
+import platforms from "../data/platforms";
 
 interface Platform{
     id:number;
@@ -7,6 +7,6 @@ interface Platform{
 }
 
 //Call our useData hook with a new endpoint to fetch the info we need
-const usePlatforms = () => useData<Platform>('/platforms/lists/parents');
+const usePlatforms = () => ({ data: platforms, isLoading: false, error: null });
 
 export default usePlatforms;

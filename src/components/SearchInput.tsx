@@ -15,7 +15,7 @@ const SearchInput = ({ onSearch }: Props) => {
       onSubmit={(event) => {
         
         event.preventDefault(); //prevents the event from getting access to the server
-
+        
         //When submitting the form, check:
         if (ref.current) onSearch(ref.current.value);
       }}
