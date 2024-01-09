@@ -15,7 +15,7 @@ const useGenres = () => useQuery({
     queryFn: 
         apiClient.getAll,
         staleTime: 24 * 60 * 60 * 1000, //apply staletime because the list of genres rarely change, 24h
-        initialData: {count: genres.length, results: genres} //set initialData to static data, puts data in the cache and removes the need for a spinner
+        initialData: {count: genres.length, results: genres, next: null} //set initialData to static data, puts data in the cache and removes the need for a spinner
 });
 
 export default useGenres;
