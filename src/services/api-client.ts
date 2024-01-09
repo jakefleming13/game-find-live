@@ -1,5 +1,10 @@
 import axios from "axios";
 
+export interface FetchResponse<T> {
+    count: number;
+    results: T[];
+}
+
 //call '.create' to create an axios instance with a custome configuration, export as a defualt object
 export default axios.create({
     //Endpoint found within the RAWG Api
