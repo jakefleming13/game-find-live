@@ -1,14 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import platforms from "../data/platforms";
 import APIClient, { FetchResponse } from "../services/api-client";
+import { Platform } from "../entities/Platform";
 
 const apiClient = new APIClient<Platform>('/platforms/lists/parents')
-
-export interface Platform {
-    id:number;
-    name:string;
-    slug:string;
-}
 
 //Call our useData hook with a new endpoint to fetch the info we need
 const usePlatforms = () => useQuery({
