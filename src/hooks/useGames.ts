@@ -2,6 +2,7 @@ import { useInfiniteQuery} from "@tanstack/react-query";
 import APIClient, { FetchResponse } from "../services/api-client";
 import { Platform } from "./usePlatforms";
 import useGameQueryStore from "../store";
+import { StringValidation } from "zod";
 
 const apiClient = new APIClient<Game>('/games');
 
@@ -13,6 +14,9 @@ export interface Game {
   parent_platforms: { platform: Platform }[];
   metacritic: number;
   rating_top: number;
+  slug: string;
+  description_raw: string;
+  description: HTMLElement;
 }
 
 const useGames = () => {
