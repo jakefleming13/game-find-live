@@ -1,5 +1,5 @@
 # GameFind
-https://game-find-lake.vercel.app/
+https://main.dznkikuoka0tx.amplifyapp.com/
 ## Overview
 GameFind is a video game discovery web application designed to help you find new and exciting games to play. Leveraging the comprehensive video game data provided by the RAWG IO API, GameFind offers a user-friendly interface to explore a vast library of games, complete with details such as descriptions, genres, release dates, store links, ratings, and much more.
 
