@@ -25,7 +25,3 @@ Building GameFind allowed me to develop and solidify skills in:
 - Applying TypeScript for enhanced code quality and maintainability.
 - Understanding and integrating third-party APIs.
 - Basic understanding of web application deployment.
-
-## Deployment
-- Currently deployed using Vercel.
-(This section will be updated upon deployment to AWS.)
